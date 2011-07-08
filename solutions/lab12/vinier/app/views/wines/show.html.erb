@@ -1,0 +1,73 @@
+<p id="notice"><%= notice %></p>
+
+<%= render "contact", :wine => @wine %>
+
+<p>
+  <b>Name:</b>
+  <%= @wine.name %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @wine.wine_type.try(:title) %>
+</p>
+
+<p>
+  <b>Vintage:</b>
+  <%= @wine.vintage %>
+</p>
+
+<p>
+  <b>Acquired on:</b>
+  <%= @wine.acquired_on %>
+</p>
+
+<p>
+  <b>Winery:</b>
+  <%= @wine.winery %>
+</p>
+
+<p>
+  <b>Appellation:</b>
+  <%= @wine.appellation %>
+</p>
+
+<p>
+  <b>Color:</b>
+  <%= @wine.color %>
+</p>
+
+<p>
+  <b>Years to maturity:</b>
+  <%= @wine.years_to_maturity %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @wine.quantity %>
+</p>
+
+<p>
+  <b>Rating:</b>
+  <%= @wine.rating %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @wine.notes %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @wine.country %>
+</p>
+
+<p>
+  <b>Code saq:</b>
+  <%= @wine.code_saq %>
+</p>
+
+
+<%= link_to 'Edit', edit_wine_path(@wine) %> |
+<%= link_to 'Destroy', @wine, :confirm => 'Are you sure?', :method => :delete %> |
+<%= link_to 'Back', wines_path %>

@@ -1,0 +1,16 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  hello: "Hello world"
+  
+  activerecord:
+    attributes:
+      wine:
+        rating: Note d'appréciation
+    errors:
+      models:
+        wine:
+          attributes:
+            rating:
+              inclusion: 'doit être entre 0 et 100'

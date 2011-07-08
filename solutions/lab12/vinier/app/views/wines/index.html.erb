@@ -1,0 +1,15 @@
+<%= link_to 'Accueil', :controller => 'home' %> | <%= link_to 'Accueil', home_path %>
+
+<h1>Liste des vins</h1>
+
+<%= form_tag search_wines_path, :method => :get, :remote => true do %>
+	<%= text_field_tag :query, params[:query] %>
+	<%= submit_tag "Chercher" %>
+	<%= link_to 'Tous', wines_path %>
+<% end -%>
+
+<%= render 'list', :wines => @wines %>
+
+<br />
+
+<%= link_to 'New Wine', new_wine_path %>

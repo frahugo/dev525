@@ -1,0 +1,46 @@
+<%= link_to 'Liste des vins', wines_path %>
+
+<h1>Accueil</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+<h2>Solutionnaire</h2>
+
+<dt>Requête 3</dt>
+<dd><%= Wine.where(:vintage => 2007).count %></dd>
+
+<dt>Requête 4</dt>
+<dd>
+  <pre>
+    vin = Wine.new
+    vin.vintage = 2011
+    vin.name = 'Les Florières'
+    vin.save
+    
+    Wine.create(:vintage => 2012, :name => 'Castle Rock', 
+      :wine_type => WineType.find_by_title('Pinot noir'))
+  </pre>
+</dd>
+
+<dt>Requête 5</dt>
+<dd><%= Wine.where(:vintage => 2007).count %></dd>
+
+<dt>Requête 6</dt>
+<dd><%= Wine.where(:vintage => 2007, :color => 'Rouge').count %></dd>
+
+<dt>Requête 7</dt>
+<dd>
+  <%= Wine.joins(:wine_type).where('wine_types.title = ?', 'Chardonnay').count %>
+  ou
+  <%= Wine.joins(:wine_type).where(:wine_types => { :title => 'Chardonnay'}).count %>
+</dd>
+
+<dt>Requête 8</dt>
+<dd>
+  <pre>
+    vin = Wine.find_by_name('Bourgogne Chardonnay Ropiteau')
+    vin.update_attribute(:rating, 75)
+    vin.update_attributes(:rating => 75)
+    vin.rating = 75
+    vin.save
+  </pre>
+</dd>

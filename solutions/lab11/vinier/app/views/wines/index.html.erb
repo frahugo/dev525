@@ -1,0 +1,47 @@
+<%= link_to 'Accueil', :controller => 'home' %> | <%= link_to 'Accueil', home_path %>
+
+<h1>Liste des vins</h1>
+
+<%= form_tag search_wines_path, :method => :get do %>
+	<%= text_field_tag :query, params[:query] %>
+	<%= submit_tag "Chercher" %>
+	<%= link_to 'Tous', wines_path %>
+<% end -%>
+
+<p>
+  <%= will_paginate @wines %>
+</p>
+
+<table>
+  <tr>
+    <th></th>
+    <th>Name</th>
+    <th>Vintage</th>
+    <th>Quantity</th>
+    <th>Rating</th>
+    <th>A boire en</th>
+  </tr>
+
+<% @wines.each do |wine| %>
+  <tr>
+	  <td><%= link_to image_tag(label_image_url(wine), :height => 100), label_image_url(wine), :target => 'label' %></td>
+    <td>
+      <h3><%= link_to wine.name, wine %></h3>
+      <p>
+        <%= wine.winery %><br/>
+        <%= wine.country %><br/>
+        <%= wine.color %><br/>
+        <%= wine.wine_type.try(:title) %>
+      </p>
+    </td>
+    <td><%= wine.vintage %></td>
+    <td><%= wine.quantity %></td>
+    <td><%= number_to_percentage wine.rating, :precision => 0 %></td>
+    <td><%= wine.drink_in_year %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Wine', new_wine_path %>

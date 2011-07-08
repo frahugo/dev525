@@ -1,0 +1,29 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  vintage: 1
+  acquired_on: 2011-07-08
+  winery: MyString
+  appellation: MyString
+  color: MyString
+  years_to_maturity: 1
+  quantity: 1
+  rating: 1.5
+  notes: MyText
+  country: MyString
+  code_saq: MyString
+
+two:
+  name: MyString
+  vintage: 1
+  acquired_on: 2011-07-08
+  winery: MyString
+  appellation: MyString
+  color: MyString
+  years_to_maturity: 1
+  quantity: 1
+  rating: 1.5
+  notes: MyText
+  country: MyString
+  code_saq: MyString
