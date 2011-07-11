@@ -11,6 +11,10 @@ Liens utiles durant le cours
 Autres liens utiles
 ----
 
+*Installation sur Mac OS X*
+
+- http://eddorre.com/posts/rails-ultimate-install-guide-on-os-x-snow-leopard-using-rvm-homebrew-and-passenger
+
 *Plugins et gems*
 
 - http://github.com
