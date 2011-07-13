@@ -2,7 +2,7 @@ class WinesController < ApplicationController
   # GET /wines
   # GET /wines.xml
   def index
-    @wines = Wine.order(:name).all
+    @wines = Wine.order(:name)
 
     respond_to do |format|
       format.html # index.html.erb
